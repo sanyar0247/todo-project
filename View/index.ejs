@@ -37,14 +37,14 @@
 
     </header>
 
-    <main class="sn-container ">
-        <Section class="todos">
+    <main >
+        <Section class="todos ">
             <% if(todos.length==0){ %> 
                 <p class="no-todo-text">هیچ کاری برای امروز نیست!</p>
             <% } %> 
            <% for(todo of todos){%> 
 
-            <div class="<%= (todo.state=="remaining")?"todo":"" %> <%= (todo.state=="submited")?"submited-todo":"" %> <%= (todo.state=="lost")?"lost-todo":"" %>">
+            <div class="sn-col-11 sn-col-md-5 <%= (todo.state=="remaining")?"todo":"" %> <%= (todo.state=="submited")?"submited-todo":"" %> <%= (todo.state=="lost")?"lost-todo":"" %>">
                 <h3 class="todo-title"><%= todo.title %> </h3>
                 <p class="todo-discription">
                     <%= todo.description %> 

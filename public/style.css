@@ -61,22 +61,28 @@ header{
 
 
 /* todo */
-
+main{
+    position: relative;
+}
+.todos{
+    
+    margin-right: 25%;
+    transform: translate(10%);
+  
+}
 .todo{
-    margin:  20px auto;
-    width: 80%;
+    height: 35vh;
+    margin:  20px 2%;
     padding: 20px;
     padding-bottom: 50px;
     background-color:  #d1d4f0;
-   
-    /* #d46e6e; */
     border-radius: 15px;
     text-align: center;
     position: relative;
 }
 .submited-todo{
-    margin:  20px auto;
-    width: 80%;
+    margin:  20px 2%;
+    height: 35vh;
     padding: 20px;
     padding-bottom: 50px;
     background-color:  #9cd46e;
@@ -90,8 +96,8 @@ header{
     color: white;
 }
 .lost-todo{
-    margin:  20px auto;
-    width: 80%;
+    margin:  20px 2%;
+    height: 35vh;
     padding: 20px;
     padding-bottom: 50px;
     background-color:  #d46e6e;
@@ -107,8 +113,8 @@ header{
 .todo-title{
     
     color: #1f1f31;
-    margin: 10px;
-    margin-bottom: 20px;
+    
+    margin-bottom: 10px;
     font-size: 1.8rem;
     white-space: normal;
     word-break: break-all;
@@ -118,16 +124,24 @@ header{
 
     margin: 10px;
     text-align: justify;
-   
+    height: 70%;
     font-size: 1.1rem;
     line-height: 30px;
     
     color: #212230;
     margin-bottom: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
     word-wrap: break-word;
     
 }
 .todo-time{
+    text-align: right;
+    width: 40%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: keep-all;
     position: absolute;
     right: 7%;
     color: #b46215;
@@ -168,13 +182,15 @@ header{
     
 }
 .add-form{
+    margin: auto;
     position: fixed;
     background-color: #969ddde8;
     
     top: 25%;
-    right: 9%;
+    right: 50%;
+    transform: translate(50%,0);
     width: 80vw;
-    height: 54vh;
+    height: 380px;
    border-radius: 30px;
    text-align: center;
 }
@@ -234,3 +250,8 @@ textarea{
     margin-top: 40vh;
 }
 
+@media only screen and (min-width: 768px) {
+    .add-form{
+        width: 650px;
+    }
+}

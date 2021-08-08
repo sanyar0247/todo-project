@@ -11,6 +11,8 @@ body{
     background-color: #1f2029;
 }
 
+
+
 /* header */
 header{
     position: sticky;
@@ -173,4 +175,8 @@ header{
     cursor: pointer;
 }
 
-
+@media only screen and (min-width: 768px) {
+    .add-form{
+        width: 650px;
+    }
+}
