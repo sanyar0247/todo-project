@@ -14,8 +14,7 @@ const todoScheema=mongoose.Schema({
         trim:true,
     },
     time:{
-        type:Date,
-       
+        type:String
     },
     state:{
         type:String,

@@ -48,7 +48,7 @@
                     <%= todo.description %> 
                 </p>
                  <div class="todo-time sn-inline-block">
-                     مهلت : 00:00
+                    مهلت : <%= todo.time %> 
                  </div>
                  <div class="todo-buttons sn-inline-block">
                     <% if(todo.state=="remaining") {%> 
@@ -76,7 +76,7 @@
             <i class="fa fa-times form-icon" id="form-icon" onmousedown="closeForm()"></i>
             <input type="text" name="title" id="title-input" placeholder="عنوان..." value="<%= todo.title %> ">
             <textarea name="description" id="desc-input" cols="30" rows="10" placeholder="توضیحات..."><%= todo.description %> </textarea>
-            <input type="time" name="time" id="date-input" >
+            <input type="text" name="time" id="date-input" placeholder="مهلت..." dir="rtl" value="<%= todo.time %>">
             <input type="submit" value="تایید" id="form-btn" dir="rtl">
         </form>
     </div>

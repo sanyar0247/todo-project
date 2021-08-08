@@ -2,7 +2,7 @@ const todoModel=require('../Model/Todo');
 
 exports.addTodo=async(req,res)=>{
     const {title,description,time}=req.body;
-    await todoModel.create({title,description,state:"remaining"});
+    await todoModel.create({title,description,time,state:"remaining"});
     res.redirect('/')
 }
 
@@ -56,12 +56,12 @@ exports.getEdit=async(req,res)=>{
 }
 
 exports.handleEdit=async(req,res)=>{
-    console.log("AAA");
-    const {title,description}=req.body;
+    const {title,description,time}=req.body;
     let id=req.params.id;
     let todo =await todoModel.findById(id);
     todo.title=title;
     todo.description=description;
+    todo.time=time;
     todo.save();
     res.redirect('/')
 }
