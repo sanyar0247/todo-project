@@ -10,6 +10,11 @@
 body{
     background-color: #1f2029;
 }
+::placeholder{
+    font-family: "BMitra";    
+    font-size: 1.1rem;
+    
+}
 
 /* header */
 header{
@@ -173,6 +178,12 @@ header{
    border-radius: 30px;
    text-align: center;
 }
+input{
+    padding: 5px;
+}
+textarea{
+    padding: 5px;
+}
 #title-input{
     display: block;
     margin: 50px auto 20px auto;
@@ -222,3 +233,4 @@ header{
     text-align: center;
     margin-top: 40vh;
 }
+
