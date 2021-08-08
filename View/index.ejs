@@ -38,10 +38,11 @@
     </header>
 
     <main >
+        <% if(todos.length==0){ %> 
+            <p class="no-todo-text">هیچ کاری برای امروز نیست!</p>
+        <% } %> 
         <Section class="todos ">
-            <% if(todos.length==0){ %> 
-                <p class="no-todo-text">هیچ کاری برای امروز نیست!</p>
-            <% } %> 
+           
            <% for(todo of todos){%> 
 
             <div class="sn-col-11 sn-col-md-5 <%= (todo.state=="remaining")?"todo":"" %> <%= (todo.state=="submited")?"submited-todo":"" %> <%= (todo.state=="lost")?"lost-todo":"" %>">
