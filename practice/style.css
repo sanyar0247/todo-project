@@ -1,0 +1,176 @@
+@font-face {
+    font-family: "BMitra";
+    src: url("BMitra.eot") format("eot"),
+        url("BMitra.woff") format("woff"),
+        url("BMitra.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+    background-color: #1f2029;
+}
+
+/* header */
+header{
+    position: sticky;
+    top: 0;
+    background-color: #969ddd;
+    opacity: 0.9;
+    height: 8vh;
+    z-index: 1;
+}
+.menu-icon{
+    
+    font-size: 1.5rem;
+    margin: 20px;
+    color: white;
+}
+
+.todo-badge{
+    display: inline-block;
+    text-align: center;
+    width: 20px !important;
+    margin: 2px;
+    padding: 2px;
+    background-color: aliceblue;
+    border-radius: 50%;
+}
+.finished{
+    background-color: rgb(20, 160, 20);
+}
+.remaining{
+    background-color: rgb(255, 193, 60);
+}
+.missed{
+    background-color: rgba(245, 28, 28, 0.938);
+}
+
+
+
+.logo img{
+    width: 60px;
+}
+
+
+/* todo */
+
+.todo{
+    margin:  20px auto;
+    width: 80%;
+    padding: 20px;
+    padding-bottom: 50px;
+    background-color: #d1d4f0;
+    border-radius: 15px;
+    text-align: center;
+    position: relative;
+}
+.todo-title{
+    
+    color: #1f1f31;
+    margin: 10px;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+.todo-discription{
+    margin: 10px;
+    text-align: right;
+    font-size: 1.1rem;
+    line-height: 30px;
+    text-justify: kashida;
+    color: #212230;
+    margin-bottom: 20px;
+
+}
+.todo-time{
+    position: absolute;
+    right: 7%;
+    color: #b46215;
+}
+.todo-buttons{
+    font-size: 1.2rem;
+    position: absolute;
+    left: 9%;
+}
+.todo-btn{
+    margin: 0px 3px;
+}
+.todo-delete{
+    color: red;
+}
+.todo-submit{
+    color: green;
+}
+.add-btn{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #969ddde7;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    box-shadow: 0px 0px 10px black;
+    cursor: pointer;
+   
+}
+.add-btn i{
+    width: 100%;
+    height: 100%;
+    color: white;
+    position: absolute;
+   bottom: -40%;
+   left: -40%;
+    
+}
+.add-form{
+    position: fixed;
+    background-color: #969ddde8;
+    
+    top: 25%;
+    right: 9%;
+    width: 80vw;
+    height: 54vh;
+   border-radius: 30px;
+   text-align: center;
+}
+#title-input{
+    display: block;
+    margin: 50px auto 20px auto;
+    width: 80%;
+    height: 30px;
+    border-radius: 5px;
+    opacity: 1.1;
+}
+#desc-input{
+    display: block;
+    margin: auto;
+    width: 80%;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+#date-input{
+    margin: 0 10% 20px 10%;
+    display: block;
+    width: 80%;
+    height: 30px;
+    border-radius: 5px;
+}
+#form-btn{
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: rgb(146, 214, 77);
+   
+}
+.form-icon{
+    top: 2%;
+    right: 5%;
+    position: absolute;
+    text-align: right;
+    margin-top: 10px;
+    color: white;
+    font-size: 1.7rem;
+    cursor: pointer;
+}
+
+

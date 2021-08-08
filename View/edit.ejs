@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../public/sanyar.css">
+    <link rel="stylesheet" href="../public/style.css">
+    <title>کار های روزمره</title>
+</head>
+
+<body>
+
+    <header class="sn-fluid  sn-flex sn-justify-space-between sn-align-items-center">
+        <div class="menu-icon">
+            <i class="fa fa-bars"></i>
+        </div>
+
+        <div class="badges">
+            <div class="todo-badge remaining" title="کار های باقیمانده">
+            <%= remainings %> 
+            </div>
+            <div class="todo-badge finished" title="کار های انجام داده شده">
+                <%= submiteds %> 
+            </div>
+            <div class="todo-badge missed" title="کار های از دست رفته">
+                <%= losts %> 
+            </div>
+
+        </div>
+        <div class="logo">
+            <img src="../public/images-removebg-preview.png" alt="logo">
+        </div>
+        
+        
+
+    </header>
+
+    <main class="sn-container ">
+        <Section class="todos">
+            
+           <% for(todo of todos){%> 
+
+            <div class="<%= (todo.state=="remaining")?"todo":"" %> <%= (todo.state=="submited")?"submited-todo":"" %> <%= (todo.state=="lost")?"lost-todo":"" %>">
+                <h3 class="todo-title"><%= todo.title %> </h3>
+                <p class="todo-discription">
+                    <%= todo.description %> 
+                </p>
+                 <div class="todo-time sn-inline-block">
+                     مهلت : 00:00
+                 </div>
+                 <div class="todo-buttons sn-inline-block">
+                    <% if(todo.state=="remaining") {%> 
+                    <a href="/submit/<%= todo._id %> " class="todo-btn todo-submit"><i class="fa fa-check"></i></a>
+                    <a href="/lost/<%= todo._id %> " class="todo-btn todo-lost"><i class="fa fa-times"></i></a>
+                    <a href="/edit/<%= todo._id %> " class="todo-btn todo-edit"><i class="fa fa-pencil"></i></a>
+                    <% } %> 
+                    <a href="/delete/<%= todo._id %> " class="todo-btn todo-delete"><i class="fa fa-trash"></i></a>
+                 </div>
+            </div>
+
+
+            <% } %> 
+            
+            
+        </Section>
+    </main>
+    <div class="add-btn sn-display-none" id="add-btn" onmousedown="openForm()">
+        
+            <i class="fa fa-plus"></i>
+        
+    </div>
+    <div class="add-form " id="add-form" >
+        <form action="/edit/<%= todo._id %> " method="POST">
+            <i class="fa fa-times form-icon" id="form-icon" onmousedown="closeForm()"></i>
+            <input type="text" name="title" id="title-input" placeholder="عنوان..." value="<%= todo.title %> ">
+            <textarea name="description" id="desc-input" cols="30" rows="10" placeholder="توضیحات..."><%= todo.description %> </textarea>
+            <input type="time" name="time" id="date-input" >
+            <input type="submit" value="تایید" id="form-btn" dir="rtl">
+        </form>
+    </div>
+
+
+    <footer class="sn-fluid sn-bg-blue">
+        
+    </footer>
+
+
+    <script>
+        const addBtn=document.getElementById("add-btn");
+        var form=document.getElementById("add-form");
+        const openBtn=document.getElementById("form-icon");
+        const openForm=()=>{
+            form.style.display="block";
+            addBtn.style.display="none";
+        }
+        const closeForm=()=>{
+            form.style.display="none";
+            addBtn.style.display="block";
+        }
+        
+    </script>
+</body>
+</html>
